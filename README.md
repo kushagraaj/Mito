@@ -1,56 +1,92 @@
-# Mito
-<div align="center">
-<p align="center"><a href="https://mitobot.wtf"><img src="https://cdn.discordapp.com/avatars/761469922563063818/b0d2a2c6c2715736c9e344774b5bbc5e.png" width="200"></a></p><br>
-<a href="https://discord.gg/mDF5QPG"><img src="https://img.shields.io/discord/760480697122029608?style=for-the-badge"></a>
-<a href="https://github.com/TheMitobot/Mito/blob/main/LICENSE"><img src="https://img.shields.io/github/license/mashape/apistatus.svg?style=for-the-badge"></a>
-<p align="center">Meet Mito, a multipurpose discord bot that has features ranging from HQ music, high-level moderation with logs, leveling, and Fun commands!</p>
-<br></div>
+# Mito Discord Bot [Legacy/Archived]
 
-## Features 
-- High Quality Music from YouTube, Bandcamp, Soundcloud, Twitch, Vimeo, Mixer, HTTP! 
-- Leveling System!
-- Moderation commands and message, mod logs!
+> ⚠️ **Status:** Decommissioned. This project is currently archived as the Discord API v14 update made the codebase legacy.
+> 🏆 **Impact:** Scaled to **189,000+ users** across **281 servers**.
 
-## Acknowledgement
-- Library - [discord.js](https://discord.js.org/)
-- Framework - [Discord Akairo](https://discord-akairo.github.io/)
-- Licence - [MIT](https://github.com/TheMitobot/Mito/blob/main/LICENSE)
-- Hosting - [Azure](https://portal.azure.com)
+<p align="center">
+  <img src="./assets/stats.png" width="40%" alt="Mito Real-time Stats">
+  <br>
+  <em>Real-time metrics from 2021 showing server count (281) and active user base (189,355).</em>
+</p>
 
-# Contributing
-First off, thanks for taking the time to contribute! You can contribute in:
-- Reporting a bug
-- Discussing the current state of the code
-- Submitting a fix
-- Proposing new features
-- Becoming a maintainer
+## 📖 About
+Mito was a high-performance, multipurpose Discord bot designed to simplify server management and entertainment. It was built to solve the lack of reliable, free music and moderation tools available at the time.
 
-### How to Contribute?
-You can contribute to this repository by the following steps: 
-- Fork the repo, add your changes and issue a pull request!
-**Note** - You must test your changes before issuing a pull request.
+### Key Features
+* **🎶 High-Fidelity Audio:** Powered by **Lavalink** nodes to handle concurrent high-quality streams without lag.
+* **📊 Leveling System:** Gamified XP tracking where users earn experience per message. Integrated with a **Rank API** to generate dynamic, graphical rank cards on the fly using a custom math algorithm (`XP = 5 * lvl^2 + 50 * lvl + 100`).
+* **🛡️ Moderation:** Automated tools to kick/ban and manage spam.
+* **📈 Server Analytics:** Real-time insights into server growth and activity.
 
-# Credits
+## 🖼️ Gallery & Interface
 
-<div align="center">
-<table>
-  <tr>
-     <td align="center"><a href="https://github.com/BruceMacGary"><img src="https://images-ext-1.discordapp.net/external/8sGQRLXpbPVjBLqJy4WR20gnx7vKHsnR_qU2CTjFsIk/%3Fv%3D4/https/avatars1.githubusercontent.com/u/69719375" width="100px;" alt="Bruce"/><br /><sub><b>BruceMacGary</b></sub></a><br /><a href="https://github.com/BruceMacGary" title="Owner">👑</a></td>
-     <td align="center"><a href="https://github.com/itsayushch"><img src="https://images-ext-2.discordapp.net/external/j6KzoUsLtEaz938SxxwxqMd25pgmoTUxxlwSyaUtrEw/%3Fv%3D4/https/avatars3.githubusercontent.com/u/57065963" width="100px;" alt=""/><br /><sub><b>Ayush</b></sub></a><br /><a href="https://github.com/itsayushch" title="Developer">💻</a></td>
-     
-  </tr>
-  
-</table>
-</div>
+| **Music System & Queue** | **Help Menu** |
+| :---: | :---: |
+| ![Music Play](./assets/play.png)<br><br>![Music Queue](./assets/music.png) | ![Help Command](./assets/help.png) |
+| *Seamless playback and queue management* | *Dynamic command handling* |
 
+## ⚙️ Technical Architecture
+*The system was engineered for scalability and type safety:*
 
-## Vote Mito on Bot lists
-<div align="center">
-<a href="https://top.gg/bot/761469922563063818/vote">
-   <img src="https://top.gg/api/widget/761469922563063818.svg">
-</a>
-<br>
+* **Language:** Written completely in **TypeScript** for strict type checking and maintainability.
+* **Framework:** Built on **Node.js (v14)** using `discord.js` (v12) and `discord-akairo` for modular command handling.
+* **Audio Engine:** Utilized **Lavalink** nodes (Java-based audio sending) to offload heavy DSP tasks from the main process.
+* **Data Persistence:** Used **MongoDB** (via Mongoose) for persistent user configurations and playlist storage.
+* **External APIs:** Integrated `amethyste-api` for image manipulation and `moment.js` for time parsing.
 
-[![Discord Boats](https://discord.boats/api/widget/761469922563063818)](https://discord.boats/bot/761469922563063818/vote)
-[![Discord Bot List](https://discordbotlist.com/bots/761469922563063818/widget)](https://discordbotlist.com/bots/761469922563063818/upvote)
+---
 
+### 🛑 Maintenance & Legacy Notice
+**Current Status (2026):**
+As of January 2026, the current version of the Discord library is **discord.js v14.25.1**. This repository runs on **v12** and is therefore incompatible with the current Discord Gateway v10.
+
+**Why is it not updated?**
+This project was developed and maintained by a team of students (aged 13-14) in 2020-2021.
+* We relied on **Heroku's free tier** (Hobby Dynos) for hosting, which has since been discontinued.
+* As students with limited financial resources at the time, we could not sustain the server costs required to support 189,000+ users once the free tiers were removed.
+* Consequently, the project was archived to focus on academic pursuits and modern web development stacks.
+
+---
+
+### 🛠️ Legacy Setup Instructions
+*(These instructions are preserved for historical reference only)*
+
+<details>
+
+<summary>Click to view original documentation</summary>
+
+### Prerequisites
+- Node.js v14.x
+- MongoDB Cluster
+- Lavalink Server (v2.10+)
+
+### Installation
+1. Clone the repo
+2. `npm install`
+3. Configure `.env` with your token and Lavalink nodes
+4. `npm run build`
+5. `npm run start`
+
+</details>
+
+## 🏅 Certifications & Recognition
+* **✅ Official Discord Verification:** Achieved "Verified Bot" status. This required a manual security audit and code review by Discord officials to approve **Privileged Gateway Intents** (Presence & Member access) for mass usage.
+* **⭐ Community Listed:** Featured on top Discord bot directories due to high uptime and user engagement.
+
+### 🗳️ Historical Rankings & Listings
+*At its peak, Mito was top-ranked on major bot directories. Top.gg (formerly Discord Bot List) is the largest index for Discord bots.*
+
+<p align="center">
+  <a href="https://top.gg/bot/761469922563063818">
+    <img src="https://top.gg/api/widget/761469922563063818.svg" alt="Top.gg Widget">
+  </a>
+  <br>
+  <a href="https://discord.boats/bot/761469922563063818">
+    <img src="https://discord.boats/api/widget/761469922563063818" alt="Discord Boats Widget">
+  </a>
+  <a href="https://discordbotlist.com/bots/761469922563063818">
+    <img src="https://discordbotlist.com/bots/761469922563063818/widget" alt="Discord Bot List Widget">
+  </a>
+  <br>
+  <em>*Note: Because the bot is currently offline/decommissioned, these live widgets may show "Offline" status or broken images.*</em>
+</p>
